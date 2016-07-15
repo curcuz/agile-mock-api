@@ -1,4 +1,6 @@
 const chalk = require('chalk');
+const request = require('request');
+const SensorTag = require('sensortag');
 const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
@@ -78,7 +80,7 @@ app.get('/api/protocals/discovery', function(req, res) {
 });
 
 app.post('/api/protocals/discovery', function(req, res) {
-  discovery = true
+  discovery.on = true
   res.status(200).send(discovery)
 });
 
